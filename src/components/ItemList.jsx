@@ -7,6 +7,7 @@ export default function ItemList({ items, onDelete }) {
       {items.map((item) => (
         <ItemCard
           key={item.id}
+          id={item.id}
           title={item.title}
           image={item.image}
           description={item.description}

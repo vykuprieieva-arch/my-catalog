@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function ItemCard({ title, image, description, rating, genre, onDelete }) {
+export default function ItemCard({ id, title, image, description, rating, genre, onDelete }) {
   return (
     <div className="card itemCard">
-      <div className="itemMedia">{image ? <img src={image} alt={title} /> : <div className="muted">No image</div>}</div>
+      <div className="itemMedia">
+        {image ? <img src={image} alt={title} /> : <div className="muted">No image</div>}
+      </div>
 
       <div className="itemBody">
         <div className="itemTitle">{title}</div>
@@ -21,7 +23,7 @@ export default function ItemCard({ title, image, description, rating, genre, onD
           <button
             className="btn btnDanger"
             type="button"
-            onClick={() => onDelete?.(title)}
+            onClick={() => onDelete?.(id)}
             aria-label={`Delete ${title}`}
             style={{ padding: '10px 14px' }}
           >
@@ -32,3 +34,4 @@ export default function ItemCard({ title, image, description, rating, genre, onD
     </div>
   )
 }
+
